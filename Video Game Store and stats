@@ -1,0 +1,38 @@
+--Creates the table and fills it with columns.
+CREATE TABLE video_games 
+(id INTEGER PRIMARY KEY,
+name TEXT, 
+store_cost INTEGER,
+aisle TEXT,
+price INTEGER);
+
+--fills the table with values
+INSERT INTO video_games VALUES(
+1,"Hobbit",5.35, 2,12.99),
+(2,"Call of Duty",10.53,1,15.99),
+(3,"Forza",15.20,4, 14.99),
+(4,"Ark",8.03,3,30.99),
+(5,"Csr2",0.33, 8,1.99),
+(6,"Elden Ring",36.41, 9,60.99),
+(7,"Pokemon Red",60.33,7,100.99),
+(8,"Pokemon Blue",60.33,7,100.99),
+(9,"Pokemon Yellow",60.33,7,100.99),
+(10,"Fallout",4.11,9,15.99),
+(11,"Watch Dogs",1.55,2,20.99),
+(12,"Ghost Busters",5.55,3,17.99),
+(13,"Sims",1.20,3,4.99),
+(14,"Zoo Tycoon",0.55,3,0.99),
+(15,"GTA",4.66,4,25.99);
+
+--Displays the name of the video game, which aisle it's in, and orders it by price.
+SELECT name,aisle,price FROM video_games ORDER BY price;
+
+--Displays the most and least expensive video game in the store as well as the of the store cost and price.
+SELECT 
+MIN(price) AS "$",
+MAX(price) AS "$$$",
+ROUND(SUM(store_cost)) AS "Cost ≈",
+ROUND(SUM(price)) AS "Price ≈"
+FROM video_games;
+
+

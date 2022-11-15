@@ -25,14 +25,17 @@ INSERT INTO video_games VALUES(
 (15,"GTA",4.66,4,25.99);
 
 --Displays the name of the video game, which aisle it's in, and orders it by price.
-SELECT name,aisle,price FROM video_games ORDER BY price;
+SELECT name,
+       aisle,
+       price 
+FROM video_games 
+ORDER BY price;
 
 --Displays the most and least expensive video game in the store as well as the of the store cost and price.
-SELECT 
-MIN(price) AS "$",
-MAX(price) AS "$$$",
-ROUND(SUM(store_cost)) AS "Cost ≈",
-ROUND(SUM(price)) AS "Price ≈"
+SELECT MIN(price) AS "$",
+       MAX(price) AS "$$$",
+       ROUND(SUM(store_cost)) AS "Cost ≈",
+       ROUND(SUM(price)) AS "Price ≈"
 FROM video_games;
 
 
